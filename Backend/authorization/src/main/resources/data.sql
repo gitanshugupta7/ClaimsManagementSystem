@@ -1,0 +1,1 @@
+INSERT INTO persons(username, password) VALUES ('gitanshugupta7', '123456789');
