@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import com.policy.microservice.dto.ValidatingDTO;
 
 
-@FeignClient(name = "auth-client", url = "${Authorization.URL}")
+@FeignClient(name = "auth-client", url = "${AUTHSERVICE:Authorization.URL}")
 public interface AuthClient {
 	
 	 @GetMapping(value = "/validate")

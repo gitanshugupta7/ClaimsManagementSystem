@@ -37,6 +37,8 @@ public class Benefits {
 		this.benefitName = benefitName;
 	}
 	
+	//The join table is being created by benefits table, here we are using mappedBy attribute
+	//mappedBy functions asks policyBenefits attribute to not handle the table create, and give the responsibility to benefits attribute in Policy Table
 	@JsonIgnore	
 	@ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL,mappedBy = "benefits")
 	private Set<Policy> policyBenefits = new HashSet<>();

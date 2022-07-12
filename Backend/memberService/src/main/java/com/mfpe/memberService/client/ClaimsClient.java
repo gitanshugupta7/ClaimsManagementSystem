@@ -11,7 +11,7 @@ import com.mfpe.memberService.dto.ClaimStatusDTO;
 import com.mfpe.memberService.model.ClaimDetails;
 
 
-@FeignClient(name = "claim-service", url = "${Claims.URL}")
+@FeignClient(name = "claim-service", url = "${Claim:Claims.URL}")
 public interface ClaimsClient {
 
 		@GetMapping("/getClaimStatus/{claimId}")

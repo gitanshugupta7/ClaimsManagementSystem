@@ -8,7 +8,7 @@ import com.mfpe.claimsmicroservice.dto.ValidatingDTO;
 
 
 
-@FeignClient(name = "auth-client", url = "${Authorization.URL}")
+@FeignClient(name = "auth-client", url = "${AUTHSERVICE:Authorization.URL}")
 public interface AuthClient {
 	
 	 @GetMapping(value = "/validate")

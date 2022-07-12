@@ -40,11 +40,13 @@ public class Policy{
 	@Column(name="Premium")
 	private double premium;
 	
+	//Lazy loading means, it will fetch data only when called explicitly using getter function 
 	@ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinTable(name="provider_policy", joinColumns= @JoinColumn(name="policyId"),
 								  inverseJoinColumns= @JoinColumn(name="hospitalId"))
 	private Set<Hospital> hospitals = new HashSet<>();
 	
+	//JoinTable is used to name the new table created due to ManyToMany mapping.
 	@JsonIgnore	
 	@ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinTable(name="policy_benefits", joinColumns= @JoinColumn(name="policyId"),

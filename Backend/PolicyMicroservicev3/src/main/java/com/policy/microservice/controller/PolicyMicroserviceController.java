@@ -38,6 +38,7 @@ public class PolicyMicroserviceController {
 	 
 	private String msg = "Token is either expired or invalid...";
 	
+	//GetMapping is just a replacement, acts a more specific RequestMapping Annotation, it replaced the "method" attribute
 	@GetMapping(path="/getChainOfProviders/{policyId}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<ProviderDTO> getChainOfProviders(@PathVariable String policyId, @RequestHeader(name = "Authorization", required = true)String token) throws InvalidTokenException{
 		
@@ -54,7 +55,7 @@ public class PolicyMicroserviceController {
 		
 	}
 	
-		
+	//produces is used to specify what kind of data it returns
 	@GetMapping(path="/getEligibleBenefits/{policyId}/{memberId}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<BenefitsDTO> getEligibleBenefits(@PathVariable String policyId, @PathVariable String memberId, @RequestHeader(name = "Authorization", required = true)String token) throws InvalidTokenException{
 			
